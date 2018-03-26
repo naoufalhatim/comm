@@ -52,7 +52,7 @@
   <div>
   	<img class="full-image" src="images/Montp.jpg"/>
   </div>
-  <h2 class="title3">C.INVESTIS :</h2><p class="byline">Réaliser par Hatim Naoufal & Saddouk Soufiane </p>
+  <h2 class="title3">C.INVESTIS :</h2><p class="byline">Réaliser par Hatim Naoufal & Saddouk Soufiane & Anaiss </p>
   <div><p class="texte8">
   			Notre site intitulé C.INVESTIS, propose alors une source de données et statistiques sur tous les quartiers et sous-quartiers de Montpellier.</br>
   			Le but étant de pouvoir trouver toutes les informations et statistiques utiles aux succès de l’investissement grâce à un moyen de recherche facile et efficace. </br>
@@ -68,7 +68,7 @@
 											<img src="images/insta.png" alt="insta" width="40"/><a href="https://www.instagram.com/"><span>Instagram</span></a>				
 	               			</div>
 	               					<div class="copyright">
-										Design by Hatim Naoufal & Soufiane SADDOUK.© 2018 Copyright Text
+										Design by Hatim Naoufal & Soufiane SADDOUK & Anaiss .© 2018 Copyright Text
 									</div>
 						</footer>
   </body>
