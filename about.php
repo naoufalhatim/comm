@@ -30,7 +30,7 @@
     <div>
                 <ul class="nav">
                     <li><a href="./recherche/recherche.php"><i class="icon-home icon-large"></i></a></li>
-                    <li><a href="./recherche/recherche.php">Trouver ou investir</a></li> 
+                    <li><a href="./recherche/recherche.php">Trouver ou investir </a></li> 
                     <li><a href="./avis.php"> Poster votre avis</a></li>
                     <li><a href="./contact.php"> Contact</a></li>
                     <li><a href="./about.php"> A propos</a></li>
