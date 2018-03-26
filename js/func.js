@@ -24,17 +24,3 @@ $(document).ready(function(){
 
 
 });
-	/*
- $(document).ready(function(){
-
-	$('#q').keyup(function(){
-								//var q = $(this).val();
-								var q = $('input[name=q]:checked').val()
-									q = $.trim(q);
-									//alert(q);
-									var qq =$.post( "post.php", {q:q});
-									
-								});
-
- });
- */
