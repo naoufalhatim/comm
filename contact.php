@@ -1,6 +1,11 @@
+
+
 <?php 
-  session_start();
+session_start();
 ?>
+
+
+
     <html>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -60,8 +65,8 @@
 
                         <div class="tab-content">
                             <div id="signup">
-                                <form action="sendmail.php" method="GET">
-
+                                <form action="sendmail.php" method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="action" value="submit">
                                     <div class="top-row">
                                         <div class="field-wrap">
                                             <label class="label1">
@@ -119,7 +124,7 @@
                     <img src="images/insta.png" alt="insta" width="40" /><a href="https://www.instagram.com/"><span>Instagram</span></a>
                 </div>
                 <div class="copyright">
-                    Design by Hatim Naoufal & Soufiane SADDOUK.© 2018 Copyright Text
+                    Design by Hatim Naoufal & Soufiane SADDOUK & Anais .© 2018 Copyright Text
                 </div>
             </footer>
 
