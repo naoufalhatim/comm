@@ -120,7 +120,7 @@
             <img src="../images/insta.png" alt="insta" width="40" /><a href="https://www.instagram.com/"><span>Instagram</span></a>
         </div>
         <div class="copyright">
-            Design by Hatim Naoufal & Soufiane SADDOUK. & Anais© 2018 Copyright Text
+            Design by Hatim Naoufal & Soufiane SADDOUK.© 2018 Copyright Text
         </div>
     </footer>
 </body>
