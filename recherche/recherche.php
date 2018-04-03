@@ -50,12 +50,12 @@
   <div class="mainsearch">
         <div class="left">
             <h1>Rechercher un Quartier</h1>
-            <form method="post" action="">
+           <form method="post" action="" name="controls" id="controls" >
                 <label class="labchoice" for="quartier">Quartier</label>
-                <input type="radio" id="q" name="q" value="1">
+                <input type="radio" class="q" name="q" value="1">
                 <br>
                 <label class="labchoice" for="quartier">Sous-Quartier</label>
-                <input type="radio" id="q" name="q" value="2">
+                <input type="radio" class="q" name="q" value="2">
                 <br>
                 <img src="../images/search_icon.png" width="20px" height="20px" alt="O--" title="Rechercher un Quartier" /> &nbsp;
                 <input autocomplete="off" style="font-weight: bold; font-size: 15px; height: 40px;" type="text" placeholder="Quartier, Sous-Quartier..." name="search" id="search" />
