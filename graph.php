@@ -1,24 +1,54 @@
-<!DOCTYPE html>
-<html>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<head>
-   <style type="text/css">
-       .container002 {
-    min-width: 310px;
-    max-width: 800px;
-    height: 400px;
-    margin: 0 auto
-}
-   </style>
+
+
+
+
+       <?php 
+
+$bdd = new PDO('mysql:host=localhost;dbname=investis04;charset=utf8','root','');
+$bdd ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $req = ("select sum(avis.st) as st1, st,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );
+    $rep = $bdd->query($req);
+       $stationnement = array();
+foreach ($rep as $row) {
+    $stationnement[] = $row['st1'];
+   }
+//print json_encode($stationnement, JSON_NUMERIC_CHECK);
+/*******************************************/
+$req1 = ("select sum(avis.sec) as sec1, sec,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
+$rep = $bdd->query($req1);
+$securite = array();
+ foreach ($rep as $row) {
+                        $securite[] = $row['sec1'];
+                        }
+ //print json_encode($securite, JSON_NUMERIC_CHECK);
+/*******************************************/
+   $req2 = ("select sum(avis.pr) as pr1, pr,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
+ $rep = $bdd->query($req2);
+ $proprete = array();
+ foreach ($rep as $row) {
+                         $proprete[] = $row['pr1'];
+                        }
+ //print json_encode($proprete, JSON_NUMERIC_CHECK);
+/*****************************************/
+ $req3 = ("select sum(avis.ev) as ev1, ev,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
+ $rep = $bdd->query($req3);
+ $espacevert = array();
+ foreach ($rep as $row) {
+                        $espacevert[] = $row['ev1'];
+                        }
+ //print json_encode($espacevert, JSON_NUMERIC_CHECK);
+/*****************************************/
+       ?>
+
+<div id="container" class="container002"></div>
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
    <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script>
      $(function () {
-var result = data;
 
-result=result.replace("\"","");
 Highcharts.chart('container', {
 
     title: {
@@ -30,7 +60,6 @@ Highcharts.chart('container', {
     },
 xAxis: {
         categories: [
-            'Nov',
             'Dec',
             'Jan',
             'Feb',
@@ -43,7 +72,7 @@ xAxis: {
             'Sep',
             'Oct',
             'Nov',
-            'Dec'
+            
         ],
         crosshair: true
     },
@@ -69,23 +98,23 @@ xAxis: {
  series: [ {
 
         name: 'Stationnement',
-        data: ["11744",24916, 24064, 29742]
+        data: [<?php echo join($stationnement, ',') ?>]
     }, {
         name: 'Sécurité',
-        data: [21744,11744, 17722, 16005]
+        data: [<?php echo join($securite, ',') ?>]
     }, {
         name: 'Propreté',
-        data: [21744,7988, 12169, 15112]
+        data: [<?php echo join($proprete, ',') ?>]
     }, {
         name: 'Espace vert',
-        data: [21744,12908, 5948, 8105]
+        data: [<?php echo join($espacevert, ',') ?>]
     }],
 
 
     responsive: {
         rules: [{
             condition: {
-                maxWidth: 500
+                maxWidth: 700
             },
             chartOptions: {
                 legend: {
@@ -100,59 +129,3 @@ xAxis: {
 });
  });
 </script>
-
-
-
-
-    <title>dfd</title>
-</head>
-<body>
-
- <p>
-         <?php 
-
-         $nom_quartier = "Comédie";
-$quartier = '25';
-$type_quartier = '2';
-try{
-$bdd = new PDO('mysql:host=localhost;dbname=investis04;charset=utf8','root','');
-$bdd ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-     $data = array();
-    $req = ("select sum(avis.ac), ac,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY day " );
-    $rep = $bdd->query($req);
-    while ($p = $rep ->fetch()){
-            //$data[] = $p['0'];
-        $json = preg_replace( "/\"(\d+)\"/", '$p', $json );
-            $data = array((int)$p['0']);
-      echo "<div> " . $p['nom_quartier'] . "</div> <p>" . $p['0'] . "</p>" ; 
-   }
- 
-  $a= json_encode($data);
-
-echo json_encode( $a, JSON_NUMERIC_CHECK );
-  echo json_encode($data); 
-
-
-    }
-catch(PDOException $e)
-    {
-    echo $req . "<br>" . $e->getMessage();
-    }
-   
-       ?>
-       
-
-
-    <?php
-
-
-?>
-
- </p>
-<div id="container" class="container002"></div>
-</body>
-</html>
-
-
-
