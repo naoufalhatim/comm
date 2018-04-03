@@ -52,7 +52,7 @@ $securite = array();
 Highcharts.chart('container', {
 
     title: {
-        text: 'Stat, '
+        text: ''
     },
 
     subtitle: {
@@ -78,7 +78,7 @@ xAxis: {
     },
     yAxis: {
         title: {
-            text: 'note'
+            text: 'note /5'
         }
     },
     legend: {
