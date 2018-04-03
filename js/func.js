@@ -1,8 +1,4 @@
 $(document).ready(function(){
-								
-
-						
-
 
 	$('#search').keyup(function(){
 		var search = $(this).val();
@@ -21,6 +17,9 @@ $(document).ready(function(){
 		}
 		
 	});
-
-
-});
+					$('#controls input').on('change', function() { 
+							var q = $('input[name=q]:checked', '#controls').val();
+							document.cookie="q="+q;
+							}); 
+ });
+ 
