@@ -9,9 +9,9 @@ document.frm.quartier.length=0;
 var i =0;
 var mosson = ["Mosson", "Les Hauts de Massane", "Celleneuve"];
 var hopitaux_facultes = ["Hopitaux-Facultés", "Plan des 4 Seigneurs", "Aiguelongue"];
-var centre = ["Centre Historique", "Boutonnet", "Les Beaux - Arts", "Les Aubes", "Les Arceaux", "Figuerolles", "Gambetta", "Gares", "Antigone", "Comédie"];
-var croix_dargent = ["Estanove", "Pas du Loup", "Croix d'Argent","Lemasson"];
-var cevennes = ["Alco", "Les Cevennes", "La Chamberte", "La Martelle"];
+var centre = ["Centre", "Boutonnet","Centre Historique", "Les Beaux - Arts", "Les Aubes", "Les Arceaux", "Figuerolles", "Gambetta", "Gares", "Antigone", "Comédie"];
+var croix_dargent = ["Croix d'Argent","Estanove", "Pas du Loup", "Lemasson"];
+var cevennes = ["Les Cevennes","Alco", "La Chamberte", "La Martelle"];
 var pres_darenes = ["Près d'Arènes", "Aiguerelles", "Saint Martin"];
 var port_marianne = ["Port Marianne", "Millénaire-Grammont", "La Pompignane"];
 
