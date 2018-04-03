@@ -130,6 +130,7 @@ catch(PDOException $e)
 </div>
 
 
+  <?php include('graph.php'); ?>
 
 
 <div class="tab1">
