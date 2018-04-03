@@ -6,7 +6,7 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=investis04;charset=utf8','root','');
 $bdd ->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $req = ("select sum(avis.st) as st1, st,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );
+    $req = ("select sum(avis.st)/(SELECT COUNT(st)) as st1, st,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );
     $rep = $bdd->query($req);
        $stationnement = array();
 foreach ($rep as $row) {
@@ -14,7 +14,7 @@ foreach ($rep as $row) {
    }
 //print json_encode($stationnement, JSON_NUMERIC_CHECK);
 /*******************************************/
-$req1 = ("select sum(avis.sec) as sec1, sec,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
+$req1 = ("select sum(avis.sec)/(SELECT COUNT(sec)) as sec1, sec,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
 $rep = $bdd->query($req1);
 $securite = array();
  foreach ($rep as $row) {
@@ -22,7 +22,7 @@ $securite = array();
                         }
  //print json_encode($securite, JSON_NUMERIC_CHECK);
 /*******************************************/
-   $req2 = ("select sum(avis.pr) as pr1, pr,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
+   $req2 = ("select sum(avis.pr)/(SELECT COUNT(pr)) as pr1, pr,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
  $rep = $bdd->query($req2);
  $proprete = array();
  foreach ($rep as $row) {
@@ -30,7 +30,7 @@ $securite = array();
                         }
  //print json_encode($proprete, JSON_NUMERIC_CHECK);
 /*****************************************/
- $req3 = ("select sum(avis.ev) as ev1, ev,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
+ $req3 = ("select sum(avis.ev)/(SELECT COUNT(ev)) as ev1, ev,nom_quartier from avis where nom_quartier = '$nom_quartier' GROUP BY month " );     
  $rep = $bdd->query($req3);
  $espacevert = array();
  foreach ($rep as $row) {
