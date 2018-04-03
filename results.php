@@ -175,8 +175,6 @@ FROM
 <div id="activites_commerciales" class="tabcontent1" style="display:none">
 <?php
 $type_donnee = "Activités commerciales";
-//$quartier = "Hôpitaux-facultés";
-//$type_quartier = "sous_quartier";
 echo "<table id=\"customers\"><tr><th>Activités commerciales</th><th>".$_GET['nom_quartier']."</th><th>Comparé aux autres quartier</th></tr>";
 try {
  $sql = ("SELECT  variable.libelle_variable, donnee.statistique, round( (SELECT SUM(do.statistique)  FROM `donnee` as do ,  `quartier`, `type_donnee`,  `variable` AS T1,  `donnee`,  `associer`  WHERE ( type_donnee.libelle_type_donnee = '$type_donnee'  AND associer.code_quartier = quartier.code_quartier AND associer.id_donnee = donnee.id_donnee  AND associer.id_variable = T1.id_variable  AND associer.id_type_donnee = type_donnee.id_type_donnee  AND do.id_donnee = associer.id_donnee  AND T1.libelle_variable = variable.libelle_variable)) / (select count(quartier.code_quartier ) FROM quartier WHERE quartier.id_type =2), 0)
